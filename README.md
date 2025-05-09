@@ -1,5 +1,5 @@
 🍎 Fruit Ripeness Detection
-This project is a Fruit Ripeness Detection that uses TensorFlow, Tkinter,Google Collab and SQLite to predict whether a fruit (e.g., Banana, Strawberry, Papaya, Guava) is Ripe or Unripe based on an uploaded image.
+This project is a Fruit Ripeness Detection that uses TensorFlow, Tkinter,Google Collab and SQLite to predict whether a fruit (e.g., Banana, Strawberry, Papaya, Guava) is Ripe, Unripe and Rotten based on an uploaded image.
 
 📌 Features
 ✔ Graphical User Interface (GUI) to upload an image and get a prediction.

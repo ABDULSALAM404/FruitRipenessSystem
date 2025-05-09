@@ -4,6 +4,7 @@ This project is a Fruit Ripeness Detection that uses TensorFlow, Tkinter,Google 
 📌 Features
 ✔ Graphical User Interface (GUI) to upload an image and get a prediction.
 ✔ Trained CNN Model (best_model.keras) to classify fruit ripeness.
+✔ labeled .txt file (fruit_labels.txt)
 ✔ SQLite Database for user authentication (Login System).
 
 📌 Project Requirements
@@ -51,11 +52,13 @@ Run the following command to install TensorFlow, Tkinter, and other required pac
 ❗ Run this command:
 pip install -r requirements.txt
 
-🔹 Step 5: Train the Model (If Not Provided)
-If the model fruit_classifier.h5 is not available, train it using:
-❗ Run this command:
-python train_model.py
-This will create and save the model in the models/ directory.
+
+🔹 Step 5: Place Pretrained Model and Labels (If Downloaded via Colab)
+If you have downloaded the pretrained model from the Google Colab notebook:
+- Copy `best_model.keras` and `fruit_labels.txt` into the `models/` directory.
+
+These files are generated during model training and can also be downloaded from Colab and manually placed here for the application to work correctly.
+
 
 🔹 Step 6: Setting Up the Database
 Ensure SQLite is installed (comes pre-installed with Python).
@@ -71,7 +74,7 @@ Open fruit_classifier.db to see the users' table.
 To start the application:
 ❗ Run this command:
 python main.py
-This will launch a GUI where you can upload an image to classify it as Ripe or Unripe.
+This will launch a GUI where you can upload an image to classify it as Ripe, Unripe or Rotten.
 
 🔹 Project Structure
 FruitRipenessApp/
@@ -96,7 +99,7 @@ FruitRipenessApp/
 └── notebook                   # Google Collab notebok for model train and agorithm
 
 🔹 Dataset Images Link:
-https://drive.google.com/file/d/1FJ-Q1DTgMQc7e_FVy9qlcAd1wlKatsxA/view?usp=sharing
+https://www.kaggle.com/datasets/dudinurdiyansah/fruit-ripeness-classifier
 
 📌 Technologies Used
 Python 3.10

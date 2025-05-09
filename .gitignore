@@ -3,8 +3,7 @@ fruit_env/
 
 # Ignore model files
 models/
-dataset/
-images/
+
 # Ignore compiled binaries
 *.pyd
 *.dll

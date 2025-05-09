@@ -29,7 +29,7 @@ python -m pip install --upgrade pip
 🔹 Step 2: Clone the Repository
 If Git is installed, clone the project from GitHub:
 ❗ Run this command:
-git clone https://github.com/yourusername/FruitRipenessApp.git
+git clone https://github.com/RidaShahid287/FruitRipenessApp
 cd FruitRipenessApp
 If Git is NOT installed, download the project manually from GitHub.
 

@@ -2,8 +2,6 @@
 fruit_env/
 
 # Ignore model files
-models/*.h5
-models/*.tflite
 dataset/
 images/
 # Ignore compiled binaries

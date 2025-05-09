@@ -1,9 +1,9 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox
 import sqlite3
-import cv2  # Import OpenCV
+import cv2
 from classify import classify_image
-from PIL import Image, ImageTk  # Only needed to display images in Tkinter
+from PIL import Image, ImageTk
 
 # Connect to SQLite Database
 conn = sqlite3.connect("fruit_classifier.db")
@@ -23,10 +23,10 @@ conn.commit()
 def login():
     username = entry_username.get()
     password = entry_password.get()
-    
+
     cursor.execute("SELECT * FROM users WHERE username=? AND password=?", (username, password))
     user = cursor.fetchone()
-    
+
     if user:
         messagebox.showinfo("Login Success", "Welcome!")
         login_window.destroy()
@@ -37,7 +37,7 @@ def login():
 def register():
     username = entry_username.get()
     password = entry_password.get()
-    
+
     try:
         cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
         conn.commit()
@@ -59,15 +59,19 @@ def upload_image():
             messagebox.showerror("Error", "Cannot read image file!")
             return
 
-        # Convert to RGB (since OpenCV loads in BGR)
+        # Convert to RGB (OpenCV loads in BGR)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-        # Resize for display
-        img = cv2.resize(img, (300, 300))
+        # Resize proportionally for display (max height = 300)
+        height, width = img.shape[:2]
+        aspect_ratio = width / height
+        display_height = 300
+        display_width = int(display_height * aspect_ratio)
+        img = cv2.resize(img, (display_width, display_height))
 
         # Convert OpenCV image to Tkinter-compatible format
-        img = Image.fromarray(img)  # Convert numpy array to Image
-        img = ImageTk.PhotoImage(img)  # Convert Image to Tkinter format
+        img = Image.fromarray(img)
+        img = ImageTk.PhotoImage(img)
 
         # Update GUI
         image_label.config(image=img)
@@ -82,18 +86,19 @@ def open_main_window():
 
     # Upload Button
     btn_upload = tk.Button(root, text="📂 Upload Image", command=upload_image,
-                            font=("Arial", 16, "bold"), bg="#4CAF50", fg="white", 
-                            width=20, height=2)
+                           font=("Arial", 16, "bold"), bg="#4CAF50", fg="white",
+                           width=20, height=2)
     btn_upload.pack(pady=20)
 
     # Image Label
     global image_label
-    image_label = tk.Label(root, bg="white", width=400, height=400, relief="solid", borderwidth=3)
+    image_label = tk.Label(root, bg="white", relief="solid", borderwidth=3, width=300, height=300)
     image_label.pack(pady=10)
 
     # Result Label
     global label_result
-    label_result = tk.Label(root, text="Result: ", font=("Arial", 20, "bold"), bg="black", fg="white", width=25, height=2)
+    label_result = tk.Label(root, text="Result: ", font=("Arial", 20, "bold"),
+                            bg="black", fg="white", width=30, height=2)
     label_result.pack(pady=15)
 
     root.mainloop()
@@ -111,10 +116,12 @@ tk.Label(login_window, text="Password:", font=("Arial", 14)).pack(pady=5)
 entry_password = tk.Entry(login_window, font=("Arial", 14), show="*")
 entry_password.pack(pady=5)
 
-btn_login = tk.Button(login_window, text="Login", command=login, font=("Arial", 14), bg="#4CAF50", fg="white", width=10)
+btn_login = tk.Button(login_window, text="Login", command=login, font=("Arial", 14),
+                      bg="#4CAF50", fg="white", width=10)
 btn_login.pack(pady=10)
 
-btn_register = tk.Button(login_window, text="Register", command=register, font=("Arial", 14), bg="#2196F3", fg="white", width=10)
+btn_register = tk.Button(login_window, text="Register", command=register, font=("Arial", 14),
+                         bg="#2196F3", fg="white", width=10)
 btn_register.pack(pady=10)
 
 login_window.mainloop()

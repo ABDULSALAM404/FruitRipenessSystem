@@ -1,9 +1,9 @@
-🍎 Fruit Ripeness Classifier
-This project is a Fruit Ripeness Classifier that uses TensorFlow, Tkinter, and SQLite to predict whether a fruit (e.g., Tomato) is Ripe or Unripe based on an uploaded image.
+🍎 Fruit Ripeness Detection
+This project is a Fruit Ripeness Detection that uses TensorFlow, Tkinter,Google Collab and SQLite to predict whether a fruit (e.g., Banana, Strawberry, Papaya, Guava) is Ripe or Unripe based on an uploaded image.
 
 📌 Features
 ✔ Graphical User Interface (GUI) to upload an image and get a prediction.
-✔ Trained CNN Model (fruit_classifier.h5) to classify fruit ripeness.
+✔ Trained CNN Model (best_model.keras) to classify fruit ripeness.
 ✔ SQLite Database for user authentication (Login System).
 
 📌 Project Requirements
@@ -82,8 +82,8 @@ FruitRipenessApp/
 ├── fruit_env/                 # Virtual environment (should be excluded from Git)
 ├── images/                    # Folder for storing fruit images
 ├── models/                    # Machine learning models
-│   ├── fruit_classifier.h5    # Trained model file
-│   └── test/                  # Model testing files
+│   ├── best_model.keras       # Trained model file
+│   └── fruit_labels.txt       # labeld file
 ├── .gitattributes             # Git LFS attributes (if any)
 ├── .gitignore                 # Git ignore file to exclude unnecessary files
 ├── all-files.txt              # List of all repository files
@@ -93,7 +93,7 @@ FruitRipenessApp/
 ├── preprocess.py              # Preprocessing script for dataset
 ├── README.md                  # Project documentation
 ├── requirements.txt           # Dependencies and packages needed
-└── train_model.py             # Script to train the fruit classifier model
+└── notebook                   # Google Collab notebok for model train and agorithm
 
 🔹 Dataset Images Link:
 https://drive.google.com/file/d/1FJ-Q1DTgMQc7e_FVy9qlcAd1wlKatsxA/view?usp=sharing

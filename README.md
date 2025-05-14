@@ -6,7 +6,7 @@ This project is a Fruit Ripeness Detection that uses TensorFlow, Tkinter,Google 
 ✔ Trained CNN Model (best_model.keras) to classify fruit ripeness.
 ✔ labeled .txt file (fruit_labels.txt)
 ✔ SQLite Database for user authentication (Login System).
-
+ 
 📌 Project Requirements
 ✅ System Requirements
 Operating System: Windows 10/11

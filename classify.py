@@ -18,7 +18,7 @@ def classify_image(image_path):
 
         # Predict
         prediction = model.predict(img)[0]                  # get first (only) result
-        predicted_index = np.argmax(prediction)
+        predicted_index = np.argmax(prediction) 
         predicted_label = class_names[predicted_index]
         confidence = prediction[predicted_index] * 100
 
@@ -27,3 +27,4 @@ def classify_image(image_path):
     except Exception as e:
         print(f"❌ Error processing image: {e}")
         return "Error"
+ 

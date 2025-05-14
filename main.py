@@ -9,7 +9,7 @@ from PIL import Image, ImageTk
 conn = sqlite3.connect("fruit_classifier.db")
 cursor = conn.cursor()
 
-# Create users table if not exists
+# Create users table if not exists 
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,

@@ -4075,7 +4075,7 @@ class RepoFilter(object):
                                                       commit.original_id)
 
       # Save these and filter them
-      orig_file_changes = set(commit.file_changes)
+      orig_file_changes = set(commit.file_changes) 
       self._filter_files(commit)
 
     # Process the --file-info-callback

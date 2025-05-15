@@ -1,3 +1,6 @@
+## Project Author
+This project was developed by Abdul Salam Wahab.
+
 🍎 Fruit Ripeness Detection
 This project is a Fruit Ripeness Detection that uses TensorFlow, Tkinter,Google Collab and SQLite to predict whether a fruit (e.g., Banana, Strawberry, Papaya, Guava) is Ripe, Unripe and Rotten based on an uploaded image.
 
